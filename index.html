@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel='stylesheet' type='text/css'>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        const DELAY_TIME = 1800;
+        function onClickMe() {
+            // $('#hbd-song')[0].play();
+            $('#stars-container').show();
+            $('#mask').fadeOut(DELAY_TIME);
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-slate-50">
+    <div id="mask">
+        <div id="start-button" onclick="onClickMe()">
+            Hey, click me!
+        </div>
+    </div>
+    <div id="stars-container">
+        <div id='stars'></div>
+        <div id='stars2'></div>
+        <div id='stars3'></div>
+    </div>
+    <div id='title'>
+        <span>
+            Dear
+        </span>
+        <span>
+            XXX,
+        </span>
+        <br>
+        <span class="story">
+            HAPPY BIRTHDAY TO YOU!!
+        </span>
+    </div>
+    <div id="story">
+        <span class="story">
+            There is something about you that has captured you permamently in my mind and my heart.
+        </span>
+        <span class="story">
+            Many ups and downs, some days crying and panicing, some days laughing crazy.
+        </span>
+    </div>
+     <audio id="hbd-song">
+        <source src="assets/happy-birthday-instrumental-compressed.mp3" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+<script>
+    (function() {
+
+      var quotes = $(".story");
+      var quoteIndex = -1;
+
+      function showNextQuote() {
+        ++quoteIndex;
+        quotes.eq(quoteIndex % quotes.length)
+          .fadeIn(DELAY_TIME)
+          .delay(DELAY_TIME)
+          .fadeOut(DELAY_TIME, showNextQuote);
+      }
+
+      showNextQuote();
+
+    })();
+</script>
+</body>
+</html>
+
