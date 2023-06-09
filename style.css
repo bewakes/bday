@@ -3,11 +3,13 @@ html {
   background: radial-gradient(
     ellipse at right top,
     /*#1b2735 0%,*/
-    #2d3e51 0%,
-    #090a0f 100%
+    #2a3e51 0%,
+    #0c0d12 100%
   );
   overflow: hidden;
 }
+
+#dear {display: none;}
 
 #mask {
     display: flex;
@@ -43,8 +45,29 @@ html {
     border: none;
 }
 
-.story { display: none; }
-#story { display: none; }
+#story, #hbd { display: none; }
+
+#story {
+    font-size: 30px;
+    font-family: "lato", sans-serif;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+#story-container {
+    display: none;
+    position: fixed;
+    padding: 6px;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 180px;
+    width: 500px;
+    border: solid 1.5px white;
+    border-radius: 5px;
+    background: #0009;
+}
 
 #stars-container {
     display: none;
